@@ -49,3 +49,47 @@ return average;
 let averageprice: number = calcAverageProductPrice(products);
 console.log(averageprice);
 
+interface Inventory{
+    product: Product,
+    quantity: number
+};
+
+let inventory: Inventory[] = [
+
+{
+    product:{
+        name: 'motor',
+        price: 10.00
+    },
+    quantity: 10
+},
+{
+    product:{
+        name: 'sensor',
+        price: 12.50
+    },
+    quantity: 4
+},{
+    product:{
+        name: 'LED',
+        price: 1.00
+    },
+    quantity: 20
+}
+
+]
+
+
+function calcuInventoryValue(invArray: Inventory[]):number{
+    let totalValue: number = 0;
+    invArray.forEach((x: Inventory) => totalValue += x.product.price * x.quantity);
+    return totalValue;
+    
+}
+
+console.log(calcuInventoryValue(inventory));
+
+
+
+
+
